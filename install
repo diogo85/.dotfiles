@@ -1,7 +1,8 @@
 #!/bin/sh
 
-ln -sv $PWD/vim/.vimrc    $HOME/.vimrc
-ln -sv $PWD/vim/bundle    $HOME/.vim/bundle
-ln -sv $PWD/zsh/.zshrc    $HOME/.zshrc
-ln -sv $PWD/zsh/.alias    $HOME/.alias
-ln -sv $PWD/zsh/oh-my-zsh $HOME/.oh-my-zsh
+ln -sv $PWD/vim/.vimrc      $HOME/.vimrc
+ln -sv $PWD/vim/bundle      $HOME/.vim/bundle
+ln -sv $PWD/zsh/.zshrc      $HOME/.zshrc
+ln -sv $PWD/zsh/.alias      $HOME/.alias
+ln -sv $PWD/zsh/oh-my-zsh   $HOME/.oh-my-zsh
+ln -sv $PWD/tmux/tmux.conf  $HOME/.tmux.conf
