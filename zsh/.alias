@@ -1,0 +1,6 @@
+# Aliases gerais
+alias zshconfig="vim ~/.zshrc"
+alias .zsh="source ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias update="sudo pacman -Syu --noconfirm && pacaur -Syu --noconfirm"
+alias pathogen="cd ~/.vim/bundle"
