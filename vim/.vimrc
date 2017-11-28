@@ -1,8 +1,9 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-set termguicolors
+" set termguicolors
 set background=dark
+set t_Co=256
 
 " Selecionando o tema
 " colorscheme solarized
