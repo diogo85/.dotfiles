@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ln -sv $PWD/vim/.vimrc $HOME/.vimrc
+ln -sv $PWD/zsh/.zshrc $HOME/.zshrc
+ln -sv $PWD/zsh/.alias $HOME/.alias
