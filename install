@@ -6,3 +6,4 @@ ln -sv $PWD/zsh/.zshrc      $HOME/.zshrc
 ln -sv $PWD/zsh/.alias      $HOME/.alias
 ln -sv $PWD/zsh/oh-my-zsh   $HOME/.oh-my-zsh
 ln -sv $PWD/tmux/tmux.conf  $HOME/.tmux.conf
+ln -sv $PWD/ranger/rc.conf  $HOME/.config/ranger/rc.conf
