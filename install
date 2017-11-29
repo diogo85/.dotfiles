@@ -1,9 +1,138 @@
 #!/bin/sh
 
+# Declarando variáveis de localização dos arquivos e diretórios
+dotold="$HOME/.dotold"
+vimrc="$HOME/.vimrc"
+vimbundle="$HOME/.vim/bundle"
+zshrc="$HOME/.zshrc"
+ohmz="$HOME/.oh-my-zsh"
+alias="$HOME/.alias"
+tmux="$HOME/.tmux.conf"
+ranger="$HOME/.config/ranger/rc.conf"
+
+
+echo "#########################################################"  
+echo "[DOTins] Instalando dotfiles"
+
+echo "[DOTins] checando se o diretório de backup existe"
+if [ -d "$dotold" ]
+then
+  echo "[DOTins] diretório de backup encontrado"
+else
+  echo "[DOTins] diretório de backup não encontrado"
+  echo "[DOTins] criando diretório de backup"
+  mkdir -p $HOME/.dotold
+fi
+
+echo "#########################################################"  
+# Processando .vimrc
+echo "[DOTins] Checando se .vimrc existe"
+if [ -f "$vimrc" ]
+then
+  echo "[DOTins] .vimrc encontrado"
+  echo "[DOTins] movendo .vimrc para o diretório de backup"
+  if [ ! -d "$dotold/vim" ]
+  then
+    mkdir -p $dotold/vim
+  fi
+  mv $vimrc $dotold/vim/.vimrc
+fi
+echo "[DOTins] criando o link para .vimrc"
 ln -sv $PWD/vim/.vimrc      $HOME/.vimrc
+echo "[DOTins] concluído o processamento de .vimrc"
+
+echo "#########################################################"  
+# Processando plugins do vim
+echo "[DOTins] Checando se o diretório de plugins do vim existe"
+if [ -d "$vimbundle" ]
+then
+  echo "[DOTins] diretório encontrado"
+  echo "[DOTins] movendo o diretório para o backup"
+  mv $vimbundle $dotold/vim
+fi
+echo "[DOTins] criando o link para o diretório de plugins"
 ln -sv $PWD/vim/bundle      $HOME/.vim/bundle
+echo "[DOTins] concluído o processamento dos plugins do vim"
+
+echo "#########################################################"  
+# Processando .zshrc
+echo "[DOTins] Checando se .zshrc existe"
+if [ -f "$zshrc" ]
+then
+  echo "[DOTins] .zshrc encontrado"
+  echo "[DOTins] movendo .zshrc para o diretório de backup"
+  if [ ! -d "$dotold/zsh" ]
+  then
+    mkdir -p $dotold/zsh
+  fi
+  mv $zshrc $dotold/zsh/.zshrc
+fi
+echo "[DOTins] criando o link para .zshrc"
 ln -sv $PWD/zsh/.zshrc      $HOME/.zshrc
+echo "[DOTins] concluído o processamento de .zshrc"
+
+echo "#########################################################"  
+# Processando .alias
+echo "[DOTins] Checando se .alias existe"
+if [ -f "$alias" ]
+then
+  echo "[DOTins] .alias encontrado"
+  echo "[DOTins] movendo .alias para o diretório de backup"
+  mv $alias $dotold/zsh/.alias
+fi
+echo "[DOTins] criando o link para .alias"
 ln -sv $PWD/zsh/.alias      $HOME/.alias
+echo "[DOTins] concluído o processamento de .alias"
+
+echo "#########################################################"  
+# Processando oh-my-zsh
+echo "[DOTins] Checando se o diretório do oh-my-zsh"
+if [ -d "$ohmz" ]
+then
+  echo "[DOTins] diretório encontrado"
+  echo "[DOTins] movendo o diretório para o backup"
+  mv $ohmz $dotold/zsh
+fi
+echo "[DOTins] criando o link para o diretório de plugins"
 ln -sv $PWD/zsh/oh-my-zsh   $HOME/.oh-my-zsh
+echo "[DOTins] concluído o processamento dos plugins do vim"
+
+echo "#########################################################"  
+# Processando .tmux.conf
+echo "[DOTins] Checando se .tmux.conf existe"
+if [ -f "$tmux" ]
+then
+  echo "[DOTins] .tmux.conf encontrado"
+  if [ ! -d "$dotold/tmux" ]
+  then
+    mkdir -p $dotold/tmux
+  fi
+  echo "[DOTins] movendo .tmux.conf para o diretório de backup"
+  mv $tmux $dotold/tmux/.tmux.conf
+fi
+echo "[DOTins] criando o link para .tmux.conf"
 ln -sv $PWD/tmux/tmux.conf  $HOME/.tmux.conf
+echo "[DOTins] concluído o processamento de .tmux.conf"
+
+echo "#########################################################"  
+# Processando rc.conf (Ranger)
+echo "[DOTins] Checando se rc.conf - Ranger - existe"
+if [ -f "$tmux" ]
+then
+  echo "[DOTins] rc.conf -  Ranger - encontrado"
+  if [ ! -d "$dotold/ranger" ]
+  then
+    mkdir -p $dotold/ranger
+  fi
+  echo "[DOTins] movendo .tmux.conf para o diretório de backup"
+  mv $tmux $dotold/ranger/rc.conf
+fi
+echo "[DOTins] criando o link para rc.conf"
 ln -sv $PWD/ranger/rc.conf  $HOME/.config/ranger/rc.conf
+echo "[DOTins] concluído o processamento de rc.conf"
+
+
+
+# ln -sv $PWD/i3/config       $HOME/.config/i3/config
+# ln -sv $PWD/i3/compton.conf $HOME/.config/compton.conf
+# ln -sv $PWD/polybar/config  $HOME/.config/polybar/config
