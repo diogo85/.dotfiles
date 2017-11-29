@@ -25,8 +25,13 @@
 [submodule "vim/bundle/anderson.vim"]
 	path = vim/bundle/anderson.vim
 	url = git@github.com:tlhr/anderson.vim.git
+<<<<<<< HEAD
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
+=======
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+>>>>>>> ba04693725cf3f3fd6dbfc971e64cc8c12bc46d1
 	url = git@github.com:diogo85/oh-my-zsh.git
 [submodule "vim/bundle/tender"]
 	path = vim/bundle/tender
