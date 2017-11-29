@@ -86,7 +86,7 @@ echo "[DOTins] concluído o processamento de .alias"
 
 echo "#########################################################"  
 # Processando oh-my-zsh
-echo "[DOTins] Checando se o diretório do oh-my-zsh"
+echo "[DOTins] Checando se o diretório do oh-my-zsh existe"
 if [ -d "$ohmz" ]
 then
   echo "[DOTins] diretório encontrado"
@@ -94,7 +94,7 @@ then
   mv $ohmz $dotold/zsh
 fi
 echo "[DOTins] criando o link para o diretório de plugins"
-ln -sv $PWD/zsh/oh-my-zsh   $HOME/.oh-my-zsh
+ln -sv $PWD/zsh/.oh-my-zsh   $HOME/.oh-my-zsh
 echo "[DOTins] concluído o processamento dos plugins do vim"
 
 echo "#########################################################"  
